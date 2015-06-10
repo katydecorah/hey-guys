@@ -28,7 +28,7 @@ var alternatives = [
   'cronies',
   'crowd',
   'earthlings',
-  'earth dweller',
+  'earth dwellers',
   'equals',
   'everybody',
   'everyone',
