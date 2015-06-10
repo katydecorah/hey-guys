@@ -12,7 +12,7 @@ var alternatives = [
   'clique',
   'club',
   'cohorts',
-  'colaborators',
+  'collaborators',
   'colleagues',
   'companions',
   'company',
