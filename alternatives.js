@@ -24,6 +24,7 @@ var alternatives = [
   'crew',
   'cronies',
   'crowd',
+  'earthlings',
   'everybody',
   'everyone',
   'family',
