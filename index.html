@@ -26,6 +26,7 @@ body {
   font-size: 8vmax;
 }
 .flex {
+  word-wrap: break-word;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -38,9 +39,6 @@ body {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
 }
 ::selection {
   background: #F76565;
@@ -48,12 +46,12 @@ body {
 </style>
 </head>
 <body>
-<div class="flex">hey&nbsp;<span id="alt"></span></div>
+<div class="flex" id="flex"></div>
 <script src="alternatives.js"></script>
 <script>
 function randomize() {
   var alternative = alternatives[Math.floor(Math.random() * alternatives.length)];
-  document.getElementById("alt").innerHTML = alternative;
+  document.getElementById("flex").innerHTML = "hey " + alternative;
   document.title = "hey " + alternative + " > hey guys";
 }
 randomize();
