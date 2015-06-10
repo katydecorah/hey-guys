@@ -1,7 +1,6 @@
 var alternatives = [
   'acquaintances',
   'allies',
-  'amigos',
   'associates',
   'bosom buddies',
   'buddies',
