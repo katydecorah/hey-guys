@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Hey guys</title>
+<link href='http://fonts.googleapis.com/css?family=Poppins:700' rel='stylesheet' type='text/css'>
+<style>
+html,
+body,
+.flex {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #FF9D07;
+  color: #fff;
+  text-align: center;
+  font-family: 'Poppins', serif;
+  font-weight: 700;
+  font-size: 5em;
+  font-size: 8vmax;
+}
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+::selection {
+  background: #F76565;
+}
+</style>
+</head>
+<body>
+<div class="flex">hey&nbsp;<span id="alt"></span></div>
+<script src="alternatives.js"></script>
+<script>
+function randomize() {
+  var alternative = alternatives[Math.floor(Math.random() * alternatives.length)];
+  document.getElementById("alt").innerHTML = alternative;
+  document.title = "hey " + alternative + " > hey guys";
+}
+randomize();
+</script>
+</body>
+</html>
