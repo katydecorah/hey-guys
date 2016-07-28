@@ -49,12 +49,27 @@ body {
 <div class="flex" id="flex"></div>
 <script src="alternatives.js"></script>
 <script>
+var i = 0;
+var shuffled = alternatives.sort(function() {
+  return 0.5 - Math.random()
+});
+
 function randomize() {
-  var alternative = alternatives[Math.floor(Math.random() * alternatives.length)];
+  if(i >= shuffled.length) i = 0;
+
+  var alternative = shuffled[i];
+  i++;
+
   document.getElementById("flex").innerHTML = "hey " + alternative;
   document.title = "hey " + alternative + " > hey guys";
 }
 randomize();
+
+document.addEventListener('keydown', function(e) {
+  if(e.keyCode === 32) {
+    randomize();
+  }
+});
 </script>
 </body>
 </html>
