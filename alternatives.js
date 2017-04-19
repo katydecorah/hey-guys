@@ -1,5 +1,6 @@
 var alternatives = [
   'acquaintances',
+  'all',
   'allies',
   'associates',
   'bosom buddies',
@@ -50,6 +51,7 @@ var alternatives = [
   'neighbors',
   'pals',
   'partners',
+  'party people',
   'peeps',
   'peers',
   'people',
