@@ -1,4 +1,5 @@
 var alternatives = [
+  '',
   'acquaintances',
   'all',
   'allies',
@@ -21,7 +22,7 @@ var alternatives = [
   'company',
   'compatriots',
   'comrades',
-  'confidantes',
+  'confidants',
   'consorts',
   'cool cats',
   'co-workers',
@@ -75,4 +76,4 @@ var alternatives = [
   'you all',
   'y’all',
   'young and old'
-]
+];
