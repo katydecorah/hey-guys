@@ -6,7 +6,7 @@
 <title>Hey guys?</title>
 <meta name="description" content="A generator to help you stop saying “Hey guys!”">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href='http://fonts.googleapis.com/css?family=Poppins:700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:700">
 <style>
 html,
 body,
@@ -43,18 +43,63 @@ body {
 ::selection {
   background: #F76565;
 }
+.typed-cursor {
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+@keyframes blink {
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes blink {
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes blink {
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
 </style>
 </head>
 <body>
-<div class="flex" id="flex"></div>
+<div class="flex" id="flex">hey&nbsp;<span id="random"></span></div>
+<script src="vendor/jquery.min.js"></script>
+<script src="vendor/typed.min.js"></script>
 <script src="alternatives.js"></script>
 <script>
-function randomize() {
-  var alternative = alternatives[Math.floor(Math.random() * alternatives.length)];
-  document.getElementById("flex").innerHTML = "hey " + alternative;
-  document.title = "hey " + alternative + " > hey guys";
+/**
+ * Randomize array element order in-place.
+ * Using Fisher-Yates shuffle algorithm.
+ * http://stackoverflow.com/a/12646864/1585455
+ */
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
 }
-randomize();
+var randomArray = shuffleArray(alternatives);
+$(document).ready(function() {
+  $("#random").typed({
+    strings: randomArray,
+    typeSpeed: 40,
+    backSpeed: 40,
+    loop: true,
+    startDelay: 200,
+    backDelay: 2500,
+    onStringTyped: function() {
+      document.title = "hey " + $("#random").text() + " > hey guys";
+	}
+  });
+});
 </script>
 </body>
 </html>
